@@ -1,0 +1,1304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+:root {
+    --caramel-pink: #E8A798;
+    --green-yellow: #E6D690;
+    --lavender-gray: #C4C1CF;
+    --pastel-brown: #D7C0AE;
+    --dark-text: #5A4A42;
+    --light-bg: #F8F9FA;
+    --white: #FFFFFF;
+    --medical-blue: #A8C8E0;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Шапка */
+.header {
+    background: linear-gradient(135deg, var(--caramel-pink), var(--pastel-brown));
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Навигация */
+.main-nav {
+    background-color: var(--caramel-pink);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    color: var(--dark-text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.nav-item:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+/* Основной контент */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section {
+    margin-bottom: 80px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Карточки профилей питомцев */
+.profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.profile-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--lavender-gray), var(--pastel-brown));
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 30px;
+}
+
+.profile-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--dark-text);
+}
+
+.profile-info p {
+    color: #666;
+}
+
+.profile-details {
+    padding: 25px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    font-weight: 600;
+}
+
+/* Кнопка добавления питомца */
+.add-pet-btn {
+    display: inline-block;
+    background: var(--caramel-pink);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 30px 0;
+}
+
+.add-pet-btn:hover {
+    transform: translateY(-3px);
+    background-color: #d89584;
+}
+
+/* Всплывающее окно с помощью CSS */
+.modal-checkbox {
+    display: none;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    position: relative;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-modal:hover {
+    color: var(--dark-text);
+}
+
+.modal-checkbox:checked + .modal-overlay {
+    display: flex;
+}
+
+.modal-checkbox:checked + .modal-overlay .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--dark-text);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--caramel-pink);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.submit-btn {
+    width: 100%;
+    background: var(--caramel-pink);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #d89584;
+}
+
+/* Улучшенная статистика здоровья с графиками */
+.stats-container {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 40px;
+}
+
+.stats-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.stats-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.pet-selector-small {
+    display: flex;
+    gap: 10px;
+}
+
+.pet-option-small {
+    padding: 8px 16px;
+    background: var(--light-bg);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.pet-option-small.active {
+    background: var(--caramel-pink);
+    color: white;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.chart-container {
+    background: var(--light-bg);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.chart-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.chart-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--caramel-pink);
+}
+
+.chart {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.bar {
+    flex: 1;
+    background: var(--caramel-pink);
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.bar:hover {
+    opacity: 0.8;
+}
+
+.bar-label {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.bar-value {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.health-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.metric-card {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--caramel-pink);
+}
+
+.metric-label {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Улучшенный журнал ухода с вкладками */
+.tabs-container {
+    margin-bottom: 30px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tab {
+    display: none;
+}
+
+.tab-label {
+    padding: 12px 25px;
+    background: var(--white);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tab:checked + .tab-label {
+    background: var(--caramel-pink);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#tab-feeding:checked ~ #content-feeding,
+#tab-walking:checked ~ #content-walking,
+#tab-vaccination:checked ~ #content-vaccination,
+#tab-hygiene:checked ~ #content-hygiene {
+    display: block;
+}
+
+.week-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--dark-text);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--lavender-gray);
+}
+
+.care-days {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.care-day {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.day-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.day-date {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.care-activities {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.care-activity {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.activity-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--caramel-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-title {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.activity-details {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.activity-status {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.activity-pet {
+    display: inline-block;
+    background: var(--lavender-gray);
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+}
+
+/* Стили для вакцинации */
+.vaccination-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vaccination-item {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vaccination-info h3 {
+    margin-bottom: 5px;
+}
+
+.vaccination-info p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.vaccination-date {
+    text-align: right;
+}
+
+.vaccination-date .date {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--caramel-pink);
+}
+
+.vaccination-date .status {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Стили для гигиены */
+.hygiene-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.hygiene-item {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.hygiene-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.hygiene-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.hygiene-date {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.hygiene-details {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.hygiene-pet {
+    display: inline-block;
+    background: var(--lavender-gray);
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+}
+
+/* Улучшенный раздел фото и роста */
+.pet-selector-container {
+    margin-bottom: 30px;
+}
+
+.pet-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pet-select {
+    display: none;
+}
+
+.pet-label {
+    padding: 12px 25px;
+    background: var(--white);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.pet-select:checked + .pet-label {
+    background: var(--caramel-pink);
+    color: white;
+}
+
+.pet-content {
+    display: none;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+#pet-buddy:checked ~ #content-buddy,
+#pet-lulu:checked ~ #content-lulu,
+#pet-caramel:checked ~ #content-caramel {
+    display: block;
+}
+
+.current-pet {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.current-pet-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--lavender-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.current-pet-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.current-pet-info p {
+    color: #777;
+}
+
+.photos-growth-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.photo-card {
+    position: relative;
+    height: 200px;
+    border-radius: 15px;
+    background: var(--lavender-gray);
+    overflow: hidden;
+}
+
+.photo-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 12px;
+}
+
+.photo-date {
+    font-weight: 600;
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+}
+
+.photo-stats {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.growth-chart {
+    background: var(--light-bg);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.chart-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chart-legend {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-weight { background: var(--caramel-pink); }
+.legend-height { background: var(--green-yellow); }
+
+.growth-graph {
+    height: 250px;
+    position: relative;
+    border-left: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 0 30px 30px;
+}
+
+.graph-line {
+    position: absolute;
+    height: 2px;
+    background: rgba(0,0,0,0.1);
+    left: 0;
+    right: 0;
+}
+
+.graph-line-1 { bottom: 25%; }
+.graph-line-2 { bottom: 50%; }
+.graph-line-3 { bottom: 75%; }
+
+.graph-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.point-weight { background: var(--caramel-pink); }
+.point-height { background: var(--green-yellow); }
+
+.graph-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 0 30px;
+}
+
+.graph-label {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.add-photo-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Напоминания о визитах к ветеринару */
+.reminders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.reminder-card {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.reminder-card:hover {
+    transform: translateY(-5px);
+}
+
+.reminder-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--lavender-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 24px;
+    color: var(--caramel-pink);
+    flex-shrink: 0;
+}
+
+.reminder-content {
+    flex: 1;
+}
+
+.reminder-content h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.reminder-content p {
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.reminder-date {
+    display: flex;
+    align-items: center;
+    color: var(--caramel-pink);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.reminder-date i {
+    margin-right: 5px;
+}
+
+/* Календарь */
+.calendar-container {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: var(--lavender-gray);
+    font-weight: 600;
+}
+
+.calendar-header div {
+    padding: 20px;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+    min-height: 120px;
+    padding: 15px;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.day-number {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.day-events {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.calendar-event {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.event-vet { background: var(--caramel-pink); }
+.event-vaccination { background: var(--medical-blue); color: white; }
+.event-walk { background: var(--green-yellow); color: var(--dark-text); }
+.event-training { background: #A8D5BA; color: var(--dark-text); }
+
+/* Футер */
+.footer {
+    background: var(--pastel-brown);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--dark-text);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-link {
+    color: var(--dark-text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--caramel-pink);
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--lavender-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-text);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background: var(--caramel-pink);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer-copyright {
+    margin-top: 20px;
+    color: var(--dark-text);
+    font-size: 0.9rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-container {
+        gap: 15px;
+    }
+
+    .profiles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photos-growth-container {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-header div {
+        padding: 10px 5px;
+    }
+
+    .calendar-day {
+        min-height: 80px;
+        padding: 8px;
+    }
+}
+
+/* Дополнительные стили для кнопок действий */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.walk-btn {
+    background: var(--green-yellow);
+    color: var(--dark-text);
+}
+
+.walk-btn:hover {
+    background: #d4c87a;
+}
+
+/* Стили для загрузки фото */
+.photo-upload-area {
+    border: 2px dashed #ddd;
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.photo-upload-area:hover {
+    border-color: var(--caramel-pink);
+    background: var(--light-bg);
+}
+
+.photo-upload-icon {
+    font-size: 48px;
+    color: var(--lavender-gray);
+    margin-bottom: 15px;
+}
+
+.photo-upload-text {
+    color: #777;
+}
+
+/* Стили для выбора питомца в формах */
+.pet-selection {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pet-option {
+    padding: 10px 20px;
+    background: var(--light-bg);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pet-option.active {
+    background: var(--caramel-pink);
+    color: white;
+}
+
+/* Стили для выбора активности */
+.activity-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.activity-badge {
+    padding: 8px 15px;
+    background: var(--light-bg);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.activity-badge.active {
+    background: var(--green-yellow);
+    color: var(--dark-text);
+}
+/* Стили для локальных фотографий животных */
+.photo-card.buddy-1 { background: url('images/buddy-1.jpg') center/cover; }
+.photo-card.buddy-2 { background: url('images/buddy-2.jpg') center/cover; }
+.photo-card.buddy-3 { background: url('images/buddy-3.jpg') center/cover; }
+.photo-card.buddy-4 { background: url('images/buddy-4.jpg') center/cover; }
+
+.photo-card.lulu-1 { background: url('images/lulu-1.jpg') center/cover; }
+.photo-card.lulu-2 { background: url('images/lulu-2.jpg') center/cover; }
+.photo-card.lulu-3 { background: url('images/lulu-3.jpg') center/cover; }
+.photo-card.lulu-4 { background: url('images/lulu-4.jpg') center/cover; }
+
+.photo-card.caramel-1 { background: url('images/caramel-1.jpg') center/cover; }
+.photo-card.caramel-2 { background: url('images/caramel-2.jpg') center/cover; }
+.photo-card.caramel-3 { background: url('images/caramel-3.jpg') center/cover; }
+.photo-card.caramel-4 { background: url('images/caramel-4.jpg') center/cover; }
+/* Стили для пользовательского аккаунта */
+.header-top {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.user-account {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.user-account:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--caramel-pink);
+    font-size: 16px;
+}
+
+.user-name {
+    color: white;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Выпадающее меню */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 10px 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.user-account:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    color: var(--dark-text);
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+    background-color: var(--light-bg);
+}
+
+.dropdown-item i {
+    width: 16px;
+    text-align: center;
+    color: var(--caramel-pink);
+}
+

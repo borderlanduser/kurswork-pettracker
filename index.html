@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetTracker - Трекер домашних животных</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="header-top">
+            <div class="user-account">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="user-name">Сафия</span>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item"><i class="fas fa-user-cog"></i>Настройки профиля</a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-paw"></i>Мои питомцы</a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-cog"></i>Настройки</a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>Выйти</a>
+                </div>
+            </div>
+        </div>
+        
+        <h1>PetTracker</h1>
+        <p>Умный трекер для заботы о ваших питомцах. Отслеживайте здоровье, питание, рост и многое другое в одном месте.</p>
+    </header>
+
+    <!-- Навигация по странице -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a class="nav-item" href="#profiles">Мои питомцы</a>
+            <a class="nav-item" href="#reminders">Напоминания</a>
+            <a class="nav-item" href="#stats">Статистика</a>
+            <a class="nav-item" href="#care-log">Журнал ухода</a>
+            <a class="nav-item" href="#photos">Фото и рост</a>
+            <a class="nav-item" href="#calendar">Календарь</a>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Раздел профилей питомцев -->
+        <section id="profiles" class="container section">
+            <div class="section-header">
+                <h2>Мои питомцы</h2>
+                <p>Вся информация о ваших любимцах в одном месте</p>
+            </div>
+
+            <div class="profiles-grid">
+                <!-- Профиль Бадди -->
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fas fa-dog"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Бадди</h3>
+                            <p>Помесь лабрадора и овчарки • 3 года</p>
+                        </div>
+                    </div>
+                    <div class="profile-details">
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Вес</span>
+                                <span class="detail-value">24.5 кг</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Рост</span>
+                                <span class="detail-value">55 см</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Последний визит к врачу</span>
+                                <span class="detail-value">12.10.2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Следующая вакцинация</span>
+                                <span class="detail-value">31.10.2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Профиль Лулу -->
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fas fa-cat"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Лулу</h3>
+                            <p>Беспородная кошка • 2 года</p>
+                        </div>
+                    </div>
+                    <div class="profile-details">
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Вес</span>
+                                <span class="detail-value">4.2 кг</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Возраст</span>
+                                <span class="detail-value">2 года</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Последний визит к врачу</span>
+                                <span class="detail-value">14.09.2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Следующая стрижка</span>
+                                <span class="detail-value">26.10.2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Профиль Карамельки -->
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fas fa-rabbit"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Карамелька</h3>
+                            <p>Карликовый кролик • 1 год</p>
+                        </div>
+                    </div>
+                    <div class="profile-details">
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Вес</span>
+                                <span class="detail-value">1.5 кг</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Возраст</span>
+                                <span class="detail-value">1 год</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Последний визит к врачу</span>
+                                <span class="detail-value">14.07.2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Следующий осмотр</span>
+                                <span class="detail-value">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кнопка добавления питомца -->
+            <div style="text-align: center;">
+                <label for="modal-toggle" class="add-pet-btn">
+                    <i class="fas fa-plus"></i> Добавить питомца
+                </label>
+            </div>
+        </section>
+
+        <!-- Раздел напоминаний о визитах к ветеринару -->
+        <section id="reminders" class="container section">
+            <div class="section-header">
+                <h2>Напоминания о визитах к ветеринару</h2>
+                <p>Ближайшие запланированные визиты и процедуры</p>
+            </div>
+
+            <div class="reminders-grid">
+                <div class="reminder-card">
+                    <div class="reminder-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <div class="reminder-content">
+                        <h3>Вакцинация Бадди</h3>
+                        <p>Ветеринарная клиника "Друг"</p>
+                        <div class="reminder-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            31 октября 2025, 10:30
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reminder-card">
+                    <div class="reminder-icon">
+                        <i class="fas fa-scissors"></i>
+                    </div>
+                    <div class="reminder-content">
+                        <h3>Стрижка Лулу</h3>
+                        <p>Груминг-салон "Пушистик"</p>
+                        <div class="reminder-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            2 ноября 2025, 15:00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел статистики здоровья -->
+        <section id="stats" class="container section">
+            <div class="section-header">
+                <h2>Статистика здоровья</h2>
+                <p>Отслеживайте показатели здоровья ваших питомцев</p>
+            </div>
+
+            <div class="stats-container">
+                <div class="stats-header">
+                    <div class="stats-title">Обзор здоровья</div>
+                    <div class="pet-selector-small">
+                        <button class="pet-option-small active">Бадди</button>
+                        <button class="pet-option-small">Лулу</button>
+                        <button class="pet-option-small">Карамелька</button>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <div class="chart-title">Вес (кг)</div>
+                            <div class="chart-value">24.5</div>
+                        </div>
+                        <div class="chart">
+                            <div class="bar" style="height: 70%;">
+                                <div class="bar-value">24.5</div>
+                                <div class="bar-label">Май</div>
+                            </div>
+                            <div class="bar" style="height: 65%;">
+                                <div class="bar-value">24.2</div>
+                                <div class="bar-label">Июнь</div>
+                            </div>
+                            <div class="bar" style="height: 60%;">
+                                <div class="bar-value">23.8</div>
+                                <div class="bar-label">Июль</div>
+                            </div>
+                            <div class="bar" style="height: 55%;">
+                                <div class="bar-value">23.5</div>
+                                <div class="bar-label">Авг</div>
+                            </div>
+                            <div class="bar" style="height: 50%;">
+                                <div class="bar-value">23.0</div>
+                                <div class="bar-label">Сен</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <div class="chart-title">Активность (мин/день)</div>
+                            <div class="chart-value">45</div>
+                        </div>
+                        <div class="chart">
+                            <div class="bar" style="height: 60%; background: var(--green-yellow);">
+                                <div class="bar-value">45</div>
+                                <div class="bar-label">Май</div>
+                            </div>
+                            <div class="bar" style="height: 70%; background: var(--green-yellow);">
+                                <div class="bar-value">52</div>
+                                <div class="bar-label">Июнь</div>
+                            </div>
+                            <div class="bar" style="height: 65%; background: var(--green-yellow);">
+                                <div class="bar-value">48</div>
+                                <div class="bar-label">Июль</div>
+                            </div>
+                            <div class="bar" style="height: 55%; background: var(--green-yellow);">
+                                <div class="bar-value">41</div>
+                                <div class="bar-label">Авг</div>
+                            </div>
+                            <div class="bar" style="height: 50%; background: var(--green-yellow);">
+                                <div class="bar-value">38</div>
+                                <div class="bar-label">Сен</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="health-metrics">
+                    <div class="metric-card">
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Вакцинация по графику</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">92%</div>
+                        <div class="metric-label">Регулярность прогулок</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел журнала ухода -->
+        <section id="care-log" class="container section">
+            <div class="section-header">
+                <h2>Журнал ухода</h2>
+                <p>Отслеживайте все процедуры по уходу за питомцами</p>
+            </div>
+
+            <div class="tabs-container">
+                <input type="radio" id="tab-feeding" name="care-tabs" checked class="tab">
+                <input type="radio" id="tab-walking" name="care-tabs" class="tab">
+                <input type="radio" id="tab-vaccination" name="care-tabs" class="tab">
+                <input type="radio" id="tab-hygiene" name="care-tabs" class="tab">
+                
+                <div class="tabs">
+                    <label for="tab-feeding" class="tab-label">Кормление</label>
+                    <label for="tab-walking" class="tab-label">Прогулки</label>
+                    <label for="tab-vaccination" class="tab-label">Вакцинация</label>
+                    <label for="tab-hygiene" class="tab-label">Гигиена</label>
+                </div>
+
+                <div id="content-feeding" class="tab-content">
+                    <div class="week-header">Текущая неделя</div>
+                    
+                    <div class="action-buttons">
+                        <label for="modal-feeding-toggle" class="add-pet-btn">
+                            <i class="fas fa-utensils"></i> Отметить кормление
+                        </label>
+                    </div>
+                    
+                    <div class="care-days">
+                        <div class="care-day">
+                            <div class="day-header">
+                                <div class="day-title">Понедельник</div>
+                                <div class="day-date">27.10.2025</div>
+                            </div>
+                            <div class="care-activities">
+                                <div class="care-activity">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-apple-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечернее кормление</div>
+                                        <div class="activity-details">Сухой корм Pro Plan для собак - 400г</div>
+                                        <span class="activity-pet">Бадди</span>
+                                    </div>
+                                </div>
+                                <div class="care-activity">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-apple-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечернее кормление</div>
+                                        <div class="activity-details">Влажный корм Royal Canin для кошек - 100г</div>
+                                        <span class="activity-pet">Лулу</span>
+                                    </div>
+                                </div>
+                                <div class="care-activity">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-apple-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечернее кормление</div>
+                                        <div class="activity-details">Свежее сено и овощи - 50г</div>
+                                        <span class="activity-pet">Карамелька</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="care-day">
+                            <div class="day-header">
+                                <div class="day-title">Вторник</div>
+                                <div class="day-date">28.10.2025</div>
+                            </div>
+                            <div class="care-activities">
+                                <div class="care-activity">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-apple-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечернее кормление</div>
+                                        <div class="activity-details">Сухой корм Pro Plan для собак - 400г</div>
+                                        <span class="activity-pet">Бадди</span>
+                                    </div>
+                                </div>
+                                <div class="care-activity">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-apple-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечернее кормление</div>
+                                        <div class="activity-details">Влажный корм Royal Canin для кошек - 100г</div>
+                                        <span class="activity-pet">Лулу</span>
+                                    </div>
+                                </div>
+                                <div class="care-activity">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-apple-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечернее кормление</div>
+                                        <div class="activity-details">Свежее сено и овощи - 50г</div>
+                                        <span class="activity-pet">Карамелька</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="care-day">
+                            <div class="day-header">
+                                <div class="day-title">Среда</div>
+                                <div class="day-date">29.10.2025</div>
+                            </div>
+                            <div class="care-activities">
+                                <div class="care-activity">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-apple-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечернее кормление</div>
+                                        <div class="activity-details">Сухой корм Pro Plan для собак - 400г</div>
+                                        <span class="activity-pet">Бадди</span>
+                                    </div>
+                                </div>
+                                <div class="care-activity">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-apple-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечернее кормление</div>
+                                        <div class="activity-details">Влажный корм Royal Canin для кошек - 100г</div>
+                                        <span class="activity-pet">Лулу</span>
+                                    </div>
+                                </div>
+                                <div class="care-activity">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-apple-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечернее кормление</div>
+                                        <div class="activity-details">Свежее сено и овощи - 50г</div>
+                                        <span class="activity-pet">Карамелька</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-walking" class="tab-content">
+                    <div class="week-header">Прогулки на неделю (27.10 - 02.11.2025)</div>
+                    
+                    <div class="action-buttons">
+                        <label for="modal-walk-toggle" class="add-pet-btn walk-btn">
+                            <i class="fas fa-walking"></i> Отметить прогулку
+                        </label>
+                    </div>
+
+                    <div class="care-days">
+                        <!-- Понедельник -->
+                        <div class="care-day">
+                            <div class="day-header">
+                                <div class="day-title">Понедельник</div>
+                                <div class="day-date">27.10.2025</div>
+                            </div>
+                            <div class="care-activities">
+                                <div class="care-activity">
+                                    <div class="activity-icon" style="background: var(--green-yellow);">
+                                        <i class="fas fa-walking"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Утренняя прогулка</div>
+                                        <div class="activity-details">07:30 • 30 минут • 2.1 км • Обычная прогулка</div>
+                                        <div class="activity-status" style="color: #28a745;">
+                                            <i class="fas fa-check-circle"></i> Выполнено
+                                        </div>
+                                        <span class="activity-pet">Бадди</span>
+                                    </div>
+                                </div>
+                                <div class="care-activity">
+                                    <div class="activity-icon" style="background: var(--green-yellow);">
+                                        <i class="fas fa-walking"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечерняя прогулка</div>
+                                        <div class="activity-details">18:00 • 45 минут • 3.2 км • Игры с мячом</div>
+                                        <div class="activity-status" style="color: #28a745;">
+                                            <i class="fas fa-check-circle"></i> Выполнено
+                                        </div>
+                                        <span class="activity-pet">Бадди</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вторник -->
+                        <div class="care-day">
+                            <div class="day-header">
+                                <div class="day-title">Вторник</div>
+                                <div class="day-date">28.10.2025</div>
+                            </div>
+                            <div class="care-activities">
+                                <div class="care-activity">
+                                    <div class="activity-icon" style="background: var(--green-yellow);">
+                                        <i class="fas fa-walking"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Утренняя прогулка</div>
+                                        <div class="activity-details">07:30 • 25 минут • 1.8 км • Быстрая прогулка</div>
+                                        <div class="activity-status" style="color: #28a745;">
+                                            <i class="fas fa-check-circle"></i> Выполнено
+                                        </div>
+                                        <span class="activity-pet">Бадди</span>
+                                    </div>
+                                </div>
+                                <div class="care-activity">
+                                    <div class="activity-icon" style="background: var(--green-yellow);">
+                                        <i class="fas fa-walking"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Вечерняя прогулка</div>
+                                        <div class="activity-details">18:30 • 60 минут • 4.1 км • Парк, встреча с другими собаками</div>
+                                        <div class="activity-status" style="color: #ffc107;">
+                                            <i class="fas fa-clock"></i> Запланировано на 18:30
+                                        </div>
+                                        <span class="activity-pet">Бадди</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Среда -->
+                        <div class="care-day">
+                            <div class="day-header">
+                                <div class="day-title">Среда</div>
+                                <div class="day-date">29.10.2025</div>
+                            </div>
+                            <div class="care-activities">
+                                <div class="care-activity">
+                                    <div class="activity-icon" style="background: var(--green-yellow);">
+                                        <i class="fas fa-walking"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Утренняя прогулка</div>
+                                        <div class="activity-details">07:30 • 30 минут • Обычная прогулка</div>
+                                        <div class="activity-status" style="color: #6c757d;">
+                                            <i class="fas fa-calendar"></i> Запланировано
+                                        </div>
+                                        <span class="activity-pet">Бадди</span>
+                                    </div>
+                                </div>
+                                <div class="care-activity">
+                                    <div class="activity-icon" style="background: var(--green-yellow);">
+                                        <i class="fas fa-walking"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Дрессировка</div>
+                                        <div class="activity-details">17:00 • 45 минут • Тренировка команд</div>
+                                        <div class="activity-status" style="color: #6c757d;">
+                                            <i class="fas fa-calendar"></i> Запланировано
+                                        </div>
+                                        <span class="activity-pet">Бадди</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-vaccination" class="tab-content">
+                    <div class="vaccination-list">
+                        <div class="vaccination-item">
+                            <div class="vaccination-info">
+                                <h3>Бадди - Вакцинация от бешенства</h3>
+                                <p>Ветеринарная клиника "Друг"</p>
+                            </div>
+                            <div class="vaccination-date">
+                                <div class="date">31.10.2025</div>
+                                <div class="status">Запланировано</div>
+                            </div>
+                        </div>
+                        <div class="vaccination-item">
+                            <div class="vaccination-info">
+                                <h3>Лулу - Комплексная вакцинация</h3>
+                                <p>Ветеринарная клиника "Друг"</p>
+                            </div>
+                            <div class="vaccination-date">
+                                <div class="date">14.09.2025</div>
+                                <div class="status">Выполнено</div>
+                            </div>
+                        </div>
+                        <div class="vaccination-item">
+                            <div class="vaccination-info">
+                                <h3>Карамелька - Вакцинация от миксоматоза</h3>
+                                <p>Ветеринарная клиника "Друг"</p>
+                            </div>
+                            <div class="vaccination-date">
+                                <div class="date">14.07.2025</div>
+                                <div class="status">Выполнено</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-hygiene" class="tab-content">
+                    <div class="hygiene-list">
+                        <div class="hygiene-item">
+                            <div class="hygiene-header">
+                                <div class="hygiene-title">Стрижка когтей</div>
+                                <div class="hygiene-date">02.11.2025</div>
+                            </div>
+                            <div class="hygiene-details">Все питомцы, профилактическая стрижка</div>
+                            <span class="hygiene-pet">Бадди</span>
+                            <span class="hygiene-pet">Лулу</span>
+                            <span class="hygiene-pet">Карамелька</span>
+                        </div>
+                        <div class="hygiene-item">
+                            <div class="hygiene-header">
+                                <div class="hygiene-title">Чистка ушей</div>
+                                <div class="hygiene-date">01.11.2025</div>
+                            </div>
+                            <div class="hygiene-details">Профилактическая чистка ушей</div>
+                            <span class="hygiene-pet">Бадди</span>
+                            <span class="hygiene-pet">Лулу</span>
+                        </div>
+                        <div class="hygiene-item">
+                            <div class="hygiene-header">
+                                <div class="hygiene-title">Чистка клетки</div>
+                                <div class="hygiene-date">15.11.2025</div>
+                            </div>
+                            <div class="hygiene-details">Полная замена подстилки и дезинфекция</div>
+                            <span class="hygiene-pet">Карамелька</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел фото и роста -->
+        <section id="photos" class="container section">
+            <div class="section-header">
+                <h2>Фото и рост</h2>
+                <p>Отслеживайте рост и развитие ваших питомцев</p>
+            </div>
+
+            <div class="pet-selector-container">
+                <input type="radio" id="pet-buddy" name="pet-select" class="pet-select">
+                <input type="radio" id="pet-lulu" name="pet-select" checked class="pet-select">
+                <input type="radio" id="pet-caramel" name="pet-select" class="pet-select">
+                
+                <div class="pet-selector">
+                    <label for="pet-buddy" class="pet-label">Бадди</label>
+                    <label for="pet-lulu" class="pet-label">Лулу</label>
+                    <label for="pet-caramel" class="pet-label">Карамелька</label>
+                </div>
+
+                <div class="add-photo-section">
+                    <label for="modal-photo-toggle" class="add-pet-btn">
+                        <i class="fas fa-camera"></i> Добавить фото и замеры
+                    </label>
+                </div>
+
+                <div id="content-buddy" class="pet-content">
+                    <div class="current-pet">
+                        <div class="current-pet-avatar">
+                            <i class="fas fa-dog"></i>
+                        </div>
+                        <div class="current-pet-info">
+                            <h3>Бадди</h3>
+                            <p>Помесь лабрадора и овчарки • 3 года</p>
+                        </div>
+                    </div>
+
+                    <div class="photos-growth-container">
+                        <div class="photos-grid">
+                            <div class="photo-card buddy-1">
+                                <div class="photo-info">
+                                    <div class="photo-date">15.10.2025</div>
+                                    <div class="photo-stats">Вес: 24.5 кг • Рост: 55 см</div>
+                                </div>
+                            </div>
+                            <div class="photo-card buddy-2">
+                                <div class="photo-info">
+                                    <div class="photo-date">01.04.2025</div>
+                                    <div class="photo-stats">Вес: 23.8 кг • Рост: 54 см</div>
+                                </div>
+                            </div>
+                            <div class="photo-card buddy-3">
+                                <div class="photo-info">
+                                    <div class="photo-date">13.12.2024</div>
+                                    <div class="photo-stats">Вес: 22.5 кг • Рост: 52 см</div>
+                                </div>
+                            </div>
+                            <div class="photo-card buddy-4">
+                                <div class="photo-info">
+                                    <div class="photo-date">03.10.2022</div>
+                                    <div class="photo-stats">Вес: 18.2 кг • Рост: 45 см</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="growth-chart">
+                            <div class="chart-title">Динамика роста Бадди</div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color legend-weight"></div>
+                                    <span>Вес (кг)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color legend-height"></div>
+                                    <span>Рост (см)</span>
+                                </div>
+                            </div>
+                            <div class="growth-graph">
+                                <div class="graph-line graph-line-1"></div>
+                                <div class="graph-line graph-line-2"></div>
+                                <div class="graph-line graph-line-3"></div>
+                                
+                                <!-- Точки веса для Бадди -->
+                                <div class="graph-point point-weight" style="left: 10%; bottom: 18%;"></div>
+                                <div class="graph-point point-weight" style="left: 40%; bottom: 22%;"></div>
+                                <div class="graph-point point-weight" style="left: 70%; bottom: 23%;"></div>
+                                <div class="graph-point point-weight" style="left: 90%; bottom: 24%;"></div>
+                                
+                                <!-- Точки роста для Бадди -->
+                                <div class="graph-point point-height" style="left: 10%; bottom: 45%;"></div>
+                                <div class="graph-point point-height" style="left: 40%; bottom: 52%;"></div>
+                                <div class="graph-point point-height" style="left: 70%; bottom: 54%;"></div>
+                                <div class="graph-point point-height" style="left: 90%; bottom: 55%;"></div>
+                                
+                                <div class="graph-labels">
+                                    <div class="graph-label">Окт'23</div>
+                                    <div class="graph-label">Дек'24</div>
+                                    <div class="graph-label">Апр'25</div>
+                                    <div class="graph-label">Окт'25</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-lulu" class="pet-content">
+                    <div class="current-pet">
+                        <div class="current-pet-avatar">
+                            <i class="fas fa-cat"></i>
+                        </div>
+                        <div class="current-pet-info">
+                            <h3>Лулу</h3>
+                            <p>Беспородная кошка • 2 года</p>
+                        </div>
+                    </div>
+
+                    <div class="photos-growth-container">
+                        <div class="photos-grid">
+                            <div class="photo-card lulu-1">
+                                <div class="photo-info">
+                                    <div class="photo-date">15.10.2025</div>
+                                    <div class="photo-stats">Вес: 4.2 кг • Длина: 45 см</div>
+                                </div>
+                            </div>
+                            <div class="photo-card lulu-2">
+                                <div class="photo-info">
+                                    <div class="photo-date">01.04.2025</div>
+                                    <div class="photo-stats">Вес: 4.1 кг • Длина: 45 см</div>
+                                </div>
+                            </div>
+                            <div class="photo-card lulu-3">
+                                <div class="photo-info">
+                                    <div class="photo-date">13.12.2024</div>
+                                    <div class="photo-stats">Вес: 3.8 кг • Длина: 35 см</div>
+                                </div>
+                            </div>
+                            <div class="photo-card lulu-4">
+                                <div class="photo-info">
+                                    <div class="photo-date">03.10.2023</div>
+                                    <div class="photo-stats">Вес: 1.2 кг • Длина: 25 см</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="growth-chart">
+                            <div class="chart-title">Динамика роста Лулу</div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color legend-weight"></div>
+                                    <span>Вес (кг)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color legend-height"></div>
+                                    <span>Длина (см)</span>
+                                </div>
+                            </div>
+                            <div class="growth-graph">
+                                <div class="graph-line graph-line-1"></div>
+                                <div class="graph-line graph-line-2"></div>
+                                <div class="graph-line graph-line-3"></div>
+                                
+                                <!-- Точки веса для Лулу -->
+                                <div class="graph-point point-weight" style="left: 10%; bottom: 12%;"></div>
+                                <div class="graph-point point-weight" style="left: 40%; bottom: 38%;"></div>
+                                <div class="graph-point point-weight" style="left: 70%; bottom: 41%;"></div>
+                                <div class="graph-point point-weight" style="left: 90%; bottom: 42%;"></div>
+                                
+                                <!-- Точки роста для Лулу -->
+                                <div class="graph-point point-height" style="left: 10%; bottom: 25%;"></div>
+                                <div class="graph-point point-height" style="left: 40%; bottom: 35%;"></div>
+                                <div class="graph-point point-height" style="left: 70%; bottom: 45%;"></div>
+                                <div class="graph-point point-height" style="left: 90%; bottom: 45%;"></div>
+                                
+                                <div class="graph-labels">
+                                    <div class="graph-label">Окт'23</div>
+                                    <div class="graph-label">Дек'24</div>
+                                    <div class="graph-label">Апр'25</div>
+                                    <div class="graph-label">Окт'25</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-caramel" class="pet-content">
+                    <div class="current-pet">
+                        <div class="current-pet-avatar">
+                            <i class="fas fa-rabbit"></i>
+                        </div>
+                        <div class="current-pet-info">
+                            <h3>Карамелька</h3>
+                            <p>Карликовый кролик • 1 год</p>
+                        </div>
+                    </div>
+
+                    <div class="photos-growth-container">
+                        <div class="photos-grid">
+                            <div class="photo-card caramel-1">
+                                <div class="photo-info">
+                                    <div class="photo-date">15.10.2025</div>
+                                    <div class="photo-stats">Вес: 1.5 кг • Длина: 25 см</div>
+                                </div>
+                            </div>
+                            <div class="photo-card caramel-2">
+                                <div class="photo-info">
+                                    <div class="photo-date">01.04.2025</div>
+                                    <div class="photo-stats">Вес: 1.2 кг • Длина: 22 см</div>
+                                </div>
+                            </div>
+                            <div class="photo-card caramel-3">
+                                <div class="photo-info">
+                                    <div class="photo-date">13.12.2024</div>
+                                    <div class="photo-stats">Вес: 0.8 кг • Длина: 18 см</div>
+                                </div>
+                            </div>
+                            <div class="photo-card caramel-4">
+                                <div class="photo-info">
+                                    <div class="photo-date">03.10.2024</div>
+                                    <div class="photo-stats">Вес: 0.8 кг • Длина: 17 см</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="growth-chart">
+                            <div class="chart-title">Динамика роста Карамельки</div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color legend-weight"></div>
+                                    <span>Вес (кг)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color legend-height"></div>
+                                    <span>Длина (см)</span>
+                                </div>
+                            </div>
+                            <div class="growth-graph">
+                                <div class="graph-line graph-line-1"></div>
+                                <div class="graph-line graph-line-2"></div>
+                                <div class="graph-line graph-line-3"></div>
+                                
+                                <!-- Точки веса для Карамельки -->
+                                <div class="graph-point point-weight" style="left: 10%; bottom: 3%;"></div>
+                                <div class="graph-point point-weight" style="left: 40%; bottom: 8%;"></div>
+                                <div class="graph-point point-weight" style="left: 70%; bottom: 12%;"></div>
+                                <div class="graph-point point-weight" style="left: 90%; bottom: 15%;"></div>
+                                
+                                <!-- Точки роста для Карамельки -->
+                                <div class="graph-point point-height" style="left: 10%; bottom: 12%;"></div>
+                                <div class="graph-point point-height" style="left: 40%; bottom: 18%;"></div>
+                                <div class="graph-point point-height" style="left: 70%; bottom: 22%;"></div>
+                                <div class="graph-point point-height" style="left: 90%; bottom: 25%;"></div>
+                                
+                                <div class="graph-labels">
+                                    <div class="graph-label">Окт'23</div>
+                                    <div class="graph-label">Дек'24</div>
+                                    <div class="graph-label">Апр'25</div>
+                                    <div class="graph-label">Окт'25</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел календаря -->
+        <section id="calendar" class="container section">
+            <div class="section-header">
+                <h2>Календарь событий</h2>
+                <p>Планируйте визиты к ветеринару, прогулки и другие мероприятия</p>
+            </div>
+
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <div>Пн</div>
+                    <div>Вт</div>
+                    <div>Ср</div>
+                    <div>Чт</div>
+                    <div>Пт</div>
+                    <div>Сб</div>
+                    <div>Вс</div>
+                </div>
+                <div class="calendar-grid">
+                    <!-- Понедельник -->
+                    <div class="calendar-day">
+                        <div class="day-number">27</div>
+                        <div class="day-events">
+                            <div class="calendar-event event-walk">Утренняя прогулка</div>
+                            <div class="calendar-event event-walk">Вечерняя прогулка</div>
+                        </div>
+                    </div>
+                    <!-- Вторник -->
+                    <div class="calendar-day">
+                        <div class="day-number">28</div>
+                        <div class="day-events">
+                            <div class="calendar-event event-walk">Утренняя прогулка</div>
+                            <div class="calendar-event event-walk">Вечерняя прогулка</div>
+                        </div>
+                    </div>
+                    <!-- Среда -->
+                    <div class="calendar-day">
+                        <div class="day-number">29</div>
+                        <div class="day-events">
+                            <div class="calendar-event event-walk">Утренняя прогулка</div>
+                            <div class="calendar-event event-training">Дрессировка</div>
+                        </div>
+                    </div>
+                    <!-- Четверг -->
+                    <div class="calendar-day">
+                        <div class="day-number">30</div>
+                        <div class="day-events">
+                            <div class="calendar-event event-walk">Утренняя прогулка</div>
+                            <div class="calendar-event event-walk">Вечерняя прогулка</div>
+                        </div>
+                    </div>
+                    <!-- Пятница -->
+                    <div class="calendar-day">
+                        <div class="day-number">31</div>
+                        <div class="day-events">
+                            <div class="calendar-event event-vaccination">Вакцинация Бадди</div>
+                            <div class="calendar-event event-walk">Утренняя прогулка</div>
+                            <div class="calendar-event event-walk">Вечерняя прогулка</div>
+                        </div>
+                    </div>
+                    <!-- Суббота -->
+                    <div class="calendar-day">
+                        <div class="day-number">1</div>
+                        <div class="day-events">
+                            <div class="calendar-event event-walk">Долгая прогулка</div>
+                            <div class="calendar-event event-walk">Вечерняя прогулка</div>
+                        </div>
+                    </div>
+                    <!-- Воскресенье -->
+                    <div class="calendar-day">
+                        <div class="day-number">2</div>
+                        <div class="day-events">
+                            <div class="calendar-event event-vet">Стрижка Лулу</div>
+                            <div class="calendar-event event-walk">Прогулка у озера</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">PetTracker</div>
+            <div class="footer-links">
+                <a href="#profiles" class="footer-link">Мои питомцы</a>
+                <a href="#care-log" class="footer-link">Журнал ухода</a>
+                <a href="#reminders" class="footer-link">Напоминания</a>
+                <a href="#stats" class="footer-link">Статистика</a>
+                <a href="#photos" class="footer-link">Фото и рост</a>
+                <a href="#calendar" class="footer-link">Календарь</a>
+            </div>
+            
+            <div class="footer-copyright">
+                &copy; 2025 PetTracker. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно добавления питомца -->
+    <input type="checkbox" id="modal-toggle" class="modal-checkbox">
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <label for="modal-toggle" class="close-modal">&times;</label>
+            <h2>Добавить нового питомца</h2>
+            <form>
+                <div class="form-group">
+                    <label for="petName">Имя питомца</label>
+                    <input type="text" id="petName" placeholder="Введите имя питомца" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="petType">Тип животного</label>
+                    <select id="petType" required>
+                        <option value="">Выберите тип</option>
+                        <option value="dog">Собака</option>
+                        <option value="cat">Кошка</option>
+                        <option value="rabbit">Кролик</option>
+                        <option value="bird">Птица</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="petBreed">Порода</label>
+                    <input type="text" id="petBreed" placeholder="Например, лабрадор">
+                </div>
+                
+                <div class="form-group">
+                    <label for="petAge">Возраст (лет)</label>
+                    <input type="number" id="petAge" placeholder="0" min="0" max="50" step="0.1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="petWeight">Вес (кг)</label>
+                    <input type="number" id="petWeight" placeholder="0" min="0" step="0.1">
+                </div>
+                
+                <button type="submit" class="submit-btn">Добавить питомца</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно добавления фото и замеров -->
+    <input type="checkbox" id="modal-photo-toggle" class="modal-checkbox">
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <label for="modal-photo-toggle" class="close-modal">&times;</label>
+            <h2>Добавить фото и замеры</h2>
+            <form>
+                <div class="form-group">
+                    <label>Выберите питомца</label>
+                    <select required>
+                        <option value="">Выберите питомца</option>
+                        <option value="buddy">Бадди</option>
+                        <option value="lulu">Лулу</option>
+                        <option value="caramel">Карамелька</option>
+                    </select>
+                </div>
+
+                <div class="photo-upload-area">
+                    <div class="photo-upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="photo-upload-text">
+                        Нажмите для загрузки фото<br>
+                        <small>или перетащите файл сюда</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="currentWeight">Вес (кг)</label>
+                        <input type="number" id="currentWeight" placeholder="0.0" min="0" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="currentHeight">Рост/Длина (см)</label>
+                        <input type="number" id="currentHeight" placeholder="0" min="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="measurementDate">Дата замера</label>
+                    <input type="date" id="measurementDate" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Сохранить замеры</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно отметки кормления -->
+    <input type="checkbox" id="modal-feeding-toggle" class="modal-checkbox">
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <label for="modal-feeding-toggle" class="close-modal">&times;</label>
+            <h2>Отметить кормление</h2>
+            <form>
+                <div class="form-group">
+                    <label>Выберите питомца</label>
+                    <div class="pet-selection">
+                        <button type="button" class="pet-option active">Бадди</button>
+                        <button type="button" class="pet-option">Лулу</button>
+                        <button type="button" class="pet-option">Карамелька</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedingTime">Время кормления</label>
+                    <input type="datetime-local" id="feedingTime" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="foodType">Тип корма</label>
+                    <select id="foodType" required>
+                        <option value="">Выберите тип корма</option>
+                        <option value="dry">Сухой корм</option>
+                        <option value="wet">Влажный корм</option>
+                        <option value="natural">Натуральная пища</option>
+                        <option value="treat">Лакомство</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="foodAmount">Количество (г)</label>
+                    <input type="number" id="foodAmount" placeholder="0" min="0" step="10">
+                </div>
+
+                <div class="form-group">
+                    <label for="foodNotes">Примечания</label>
+                    <textarea id="foodNotes" rows="2" placeholder="Особые отметки о кормлении"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Сохранить кормление</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно отметки прогулки -->
+    <input type="checkbox" id="modal-walk-toggle" class="modal-checkbox">
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <label for="modal-walk-toggle" class="close-modal">&times;</label>
+            <h2>Отметить прогулку</h2>
+            <form>
+                <div class="form-group">
+                    <label>Выберите питомца</label>
+                    <div class="pet-selection">
+                        <button type="button" class="pet-option active">Бадди</button>
+                        <button type="button" class="pet-option">Лулу</button>
+                        <button type="button" class="pet-option">Карамелька</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="walkDate">Дата и время прогулки</label>
+                    <input type="datetime-local" id="walkDate" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="walkDuration">Продолжительность (мин)</label>
+                        <input type="number" id="walkDuration" placeholder="0" min="0" step="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="walkDistance">Дистанция (км)</label>
+                        <input type="number" id="walkDistance" placeholder="0.0" min="0" step="0.1">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Тип активности</label>
+                    <div class="activity-badges">
+                        <button type="button" class="activity-badge active">Обычная прогулка</button>
+                        <button type="button" class="activity-badge">Бег/Пробежка</button>
+                        <button type="button" class="activity-badge">Игры с мячом</button>
+                        <button type="button" class="activity-badge">Дрессировка</button>
+                        <button type="button" class="activity-badge">Плавание</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="walkLocation">Место прогулки</label>
+                    <input type="text" id="walkLocation" placeholder="Парк, лес, двор...">
+                </div>
+
+                <button type="submit" class="submit-btn" style="background: var(--green-yellow); color: var(--dark-text);">Сохранить прогулку</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
