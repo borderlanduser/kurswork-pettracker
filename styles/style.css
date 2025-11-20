@@ -1307,7 +1307,23 @@ main {
     gap: 8px;
     margin-left: auto;
 }
+/* Добавьте этот стиль в ваш CSS файл */
+.profile-header {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--lavender-gray), var(--pastel-brown));
+}
 
+.profile-info {
+    flex: 1; /* Добавляем это свойство */
+    margin-right: 20px; /* Добавляем отступ справа */
+}
+
+.profile-actions {
+    display: flex;
+    gap: 8px;
+}
 .edit-pet-btn, .delete-pet-btn {
     width: 35px;
     height: 35px;
@@ -1323,17 +1339,17 @@ main {
 }
 
 .edit-pet-btn {
-    background: var(--green-yellow);
+    background: white;
     color: var(--dark-text);
 }
 
 .edit-pet-btn:hover {
-    background: #d4c87a;
+    
     transform: scale(1.1);
 }
 
 .delete-pet-btn {
-    background: #ff6b6b;
+    
     color: white;
 }
 
@@ -1430,4 +1446,3 @@ main {
     padding: 0;
     overflow: hidden;
 }
-

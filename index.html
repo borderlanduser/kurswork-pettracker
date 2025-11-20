@@ -50,16 +50,14 @@
                 <p>Вся информация о ваших любимцах в одном месте</p>
             </div>
 
-            <div class="profiles-grid">
-                <!-- Профиль Бадди -->
+                <div class="profiles-grid">
+                <!-- Карточка Бадди -->
                 <div class="profile-card">
                     <div class="profile-header">
-                        <div class="profile-avatar">
-                            <i class="fas fa-dog"></i>
-                        </div>
+                        
                         <div class="profile-info">
                             <h3>Бадди</h3>
-                            <p>Помесь лабрадора и овчарки • 3 года</p>
+                            <p>Помесь лабрадора и овчарки  3 года</p>
                         </div>
                         <div class="profile-actions">
                             <label for="modal-edit-buddy-toggle" class="edit-pet-btn">
@@ -92,15 +90,13 @@
                     </div>
                 </div>
 
-                <!-- Профиль Лулу -->
+                <!-- Карточка Лулу -->
                 <div class="profile-card">
                     <div class="profile-header">
-                        <div class="profile-avatar">
-                            <i class="fas fa-cat"></i>
-                        </div>
+                        
                         <div class="profile-info">
                             <h3>Лулу</h3>
-                            <p>Беспородная кошка • 2 года</p>
+                            <p>Беспородная кошка<br>2 года</p>
                         </div>
                         <div class="profile-actions">
                             <label for="modal-edit-lulu-toggle" class="edit-pet-btn">
@@ -133,15 +129,13 @@
                     </div>
                 </div>
 
-                <!-- Профиль Карамельки -->
+                <!-- Карточка Карамельки -->
                 <div class="profile-card">
                     <div class="profile-header">
-                        <div class="profile-avatar">
-                            <i class="fas fa-rabbit"></i>
-                        </div>
+                        
                         <div class="profile-info">
                             <h3>Карамелька</h3>
-                            <p>Карликовый кролик • 1 год</p>
+                            <p>Карликовый кролик<br>1 год</p>
                         </div>
                         <div class="profile-actions">
                             <label for="modal-edit-caramel-toggle" class="edit-pet-btn">
@@ -174,6 +168,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+
 
             <!-- Кнопка добавления питомца -->
             <div style="text-align: center;">
@@ -1201,39 +1197,31 @@
             </form>
         </div>
     </div>
-    <!-- Модальные окна подтверждения удаления -->
-<input type="checkbox" id="modal-delete-buddy-toggle" class="modal-checkbox">
-<div class="modal-overlay">
-    <div class="modal-content">
-        <label for="modal-delete-buddy-toggle" class="close-modal">&times;</label>
-        <h2>Подтверждение удаления</h2>
-        <div class="delete-confirmation">
-            <div class="delete-icon">
-                <i class="fas fa-exclamation-triangle"></i>
-            </div>
-            <p>Вы уверены, что хотите удалить питомца <strong>Бадди</strong>?</p>
-            <p class="delete-warning">Это действие нельзя будет отменить.</p>
-            <div class="delete-actions">
-                <label for="modal-delete-buddy-toggle" class="cancel-btn">
-                    Отмена
-                </label>
-                <label for="modal-delete-buddy-toggle" class="confirm-delete-btn" onclick="document.querySelector('.profile-card:first-child').style.display = 'none'">
-                    Удалить
-                </label>
+<!-- Модальные окна удаления  -->
+    <input type="checkbox" id="modal-delete-buddy-toggle" class="modal-checkbox">
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <label for="modal-delete-buddy-toggle" class="close-modal">&times;</label>
+            <h2>Удалить питомца</h2>
+            <div class="delete-confirmation">
+                <p>Вы уверены, что хотите удалить <strong>Бадди</strong>?</p>
+                <p class="delete-warning">Это действие нельзя отменить.</p>
+                <div class="delete-actions">
+                    <label for="modal-delete-buddy-toggle" class="cancel-btn">
+                        Отмена
+                    </label>
+                    <button class="confirm-delete-btn">Удалить</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 <input type="checkbox" id="modal-delete-lulu-toggle" class="modal-checkbox">
 <div class="modal-overlay">
     <div class="modal-content">
         <label for="modal-delete-lulu-toggle" class="close-modal">&times;</label>
-        <h2>Подтверждение удаления</h2>
+        <h2>Удалить питомца</h2>
         <div class="delete-confirmation">
-            <div class="delete-icon">
-                <i class="fas fa-exclamation-triangle"></i>
-            </div>
             <p>Вы уверены, что хотите удалить питомца <strong>Лулу</strong>?</p>
             <p class="delete-warning">Это действие нельзя будет отменить.</p>
             <div class="delete-actions">
@@ -1252,11 +1240,8 @@
 <div class="modal-overlay">
     <div class="modal-content">
         <label for="modal-delete-caramel-toggle" class="close-modal">&times;</label>
-        <h2>Подтверждение удаления</h2>
+        <h2>Удалить питомца</h2>
         <div class="delete-confirmation">
-            <div class="delete-icon">
-                <i class="fas fa-exclamation-triangle"></i>
-            </div>
             <p>Вы уверены, что хотите удалить питомца <strong>Карамелька</strong>?</p>
             <p class="delete-warning">Это действие нельзя будет отменить.</p>
             <div class="delete-actions">
