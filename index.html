@@ -61,6 +61,14 @@
                             <h3>Бадди</h3>
                             <p>Помесь лабрадора и овчарки • 3 года</p>
                         </div>
+                        <div class="profile-actions">
+                            <label for="modal-edit-buddy-toggle" class="edit-pet-btn">
+                                <i class="fas fa-edit"></i>
+                            </label>
+                            <label for="modal-delete-buddy-toggle" class="delete-pet-btn">
+                                <i class="fas fa-times"></i>
+                            </label>
+                        </div>
                     </div>
                     <div class="profile-details">
                         <div class="detail-grid">
@@ -94,6 +102,14 @@
                             <h3>Лулу</h3>
                             <p>Беспородная кошка • 2 года</p>
                         </div>
+                        <div class="profile-actions">
+                            <label for="modal-edit-lulu-toggle" class="edit-pet-btn">
+                                <i class="fas fa-edit"></i>
+                            </label>
+                            <label for="modal-delete-lulu-toggle" class="delete-pet-btn">
+                                <i class="fas fa-times"></i>
+                            </label>
+                        </div>
                     </div>
                     <div class="profile-details">
                         <div class="detail-grid">
@@ -126,6 +142,14 @@
                         <div class="profile-info">
                             <h3>Карамелька</h3>
                             <p>Карликовый кролик • 1 год</p>
+                        </div>
+                        <div class="profile-actions">
+                            <label for="modal-edit-caramel-toggle" class="edit-pet-btn">
+                                <i class="fas fa-edit"></i>
+                            </label>
+                            <label for="modal-delete-caramel-toggle" class="delete-pet-btn">
+                                <i class="fas fa-times"></i>
+                            </label>
                         </div>
                     </div>
                     <div class="profile-details">
@@ -1174,6 +1198,232 @@
                 </div>
 
                 <button type="submit" class="submit-btn" style="background: var(--green-yellow); color: var(--dark-text);">Сохранить прогулку</button>
+            </form>
+        </div>
+    </div>
+    <!-- Модальные окна подтверждения удаления -->
+<input type="checkbox" id="modal-delete-buddy-toggle" class="modal-checkbox">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <label for="modal-delete-buddy-toggle" class="close-modal">&times;</label>
+        <h2>Подтверждение удаления</h2>
+        <div class="delete-confirmation">
+            <div class="delete-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <p>Вы уверены, что хотите удалить питомца <strong>Бадди</strong>?</p>
+            <p class="delete-warning">Это действие нельзя будет отменить.</p>
+            <div class="delete-actions">
+                <label for="modal-delete-buddy-toggle" class="cancel-btn">
+                    Отмена
+                </label>
+                <label for="modal-delete-buddy-toggle" class="confirm-delete-btn" onclick="document.querySelector('.profile-card:first-child').style.display = 'none'">
+                    Удалить
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="checkbox" id="modal-delete-lulu-toggle" class="modal-checkbox">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <label for="modal-delete-lulu-toggle" class="close-modal">&times;</label>
+        <h2>Подтверждение удаления</h2>
+        <div class="delete-confirmation">
+            <div class="delete-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <p>Вы уверены, что хотите удалить питомца <strong>Лулу</strong>?</p>
+            <p class="delete-warning">Это действие нельзя будет отменить.</p>
+            <div class="delete-actions">
+                <label for="modal-delete-lulu-toggle" class="cancel-btn">
+                    Отмена
+                </label>
+                <label for="modal-delete-lulu-toggle" class="confirm-delete-btn" onclick="document.querySelectorAll('.profile-card')[1].style.display = 'none'">
+                    Удалить
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="checkbox" id="modal-delete-caramel-toggle" class="modal-checkbox">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <label for="modal-delete-caramel-toggle" class="close-modal">&times;</label>
+        <h2>Подтверждение удаления</h2>
+        <div class="delete-confirmation">
+            <div class="delete-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <p>Вы уверены, что хотите удалить питомца <strong>Карамелька</strong>?</p>
+            <p class="delete-warning">Это действие нельзя будет отменить.</p>
+            <div class="delete-actions">
+                <label for="modal-delete-caramel-toggle" class="cancel-btn">
+                    Отмена
+                </label>
+                <label for="modal-delete-caramel-toggle" class="confirm-delete-btn" onclick="document.querySelectorAll('.profile-card')[2].style.display = 'none'">
+                    Удалить
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальные окна редактирования -->
+<input type="checkbox" id="modal-edit-buddy-toggle" class="modal-checkbox">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <label for="modal-edit-buddy-toggle" class="close-modal">&times;</label>
+        <h2>Редактировать питомца</h2>
+        <form>
+            <div class="form-group">
+                <label for="editBuddyName">Имя питомца</label>
+                <input type="text" id="editBuddyName" value="Бадди" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="editBuddyType">Тип животного</label>
+                <select id="editBuddyType" required>
+                    <option value="dog" selected>Собака</option>
+                    <option value="cat">Кошка</option>
+                    <option value="rabbit">Кролик</option>
+                    <option value="bird">Птица</option>
+                    <option value="other">Другое</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="editBuddyBreed">Порода</label>
+                <input type="text" id="editBuddyBreed" value="Помесь лабрадора и овчарки">
+            </div>
+            
+            <div class="form-group">
+                <label for="editBuddyAge">Возраст (лет)</label>
+                <input type="number" id="editBuddyAge" value="3" min="0" max="50" step="0.1">
+            </div>
+            
+            <div class="form-group">
+                <label for="editBuddyWeight">Вес (кг)</label>
+                <input type="number" id="editBuddyWeight" value="24.5" min="0" step="0.1">
+            </div>
+
+            <div class="form-group">
+                <label for="editBuddyHeight">Рост (см)</label>
+                <input type="number" id="editBuddyHeight" value="55" min="0">
+            </div>
+            
+            <div class="form-actions">
+                <label for="modal-edit-buddy-toggle" class="cancel-btn">
+                    Отмена
+                </label>
+                <button type="submit" class="submit-btn">Сохранить изменения</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<input type="checkbox" id="modal-edit-lulu-toggle" class="modal-checkbox">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <label for="modal-edit-lulu-toggle" class="close-modal">&times;</label>
+        <h2>Редактировать питомца</h2>
+        <form>
+            <div class="form-group">
+                <label for="editLuluName">Имя питомца</label>
+                <input type="text" id="editLuluName" value="Лулу" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="editLuluType">Тип животного</label>
+                <select id="editLuluType" required>
+                    <option value="dog">Собака</option>
+                    <option value="cat" selected>Кошка</option>
+                    <option value="rabbit">Кролик</option>
+                    <option value="bird">Птица</option>
+                    <option value="other">Другое</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="editLuluBreed">Порода</label>
+                <input type="text" id="editLuluBreed" value="Беспородная кошка">
+            </div>
+            
+            <div class="form-group">
+                <label for="editLuluAge">Возраст (лет)</label>
+                <input type="number" id="editLuluAge" value="2" min="0" max="50" step="0.1">
+            </div>
+            
+            <div class="form-group">
+                <label for="editLuluWeight">Вес (кг)</label>
+                <input type="number" id="editLuluWeight" value="4.2" min="0" step="0.1">
+            </div>
+
+            <div class="form-group">
+                <label for="editLuluHeight">Длина (см)</label>
+                <input type="number" id="editLuluHeight" value="45" min="0">
+            </div>
+            
+            <div class="form-actions">
+                <label for="modal-edit-lulu-toggle" class="cancel-btn">
+                    Отмена
+                </label>
+                <button type="submit" class="submit-btn">Сохранить изменения</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <input type="checkbox" id="modal-edit-caramel-toggle" class="modal-checkbox">
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <label for="modal-edit-caramel-toggle" class="close-modal">&times;</label>
+            <h2>Редактировать питомца</h2>
+            <form>
+                <div class="form-group">
+                    <label for="editCaramelName">Имя питомца</label>
+                    <input type="text" id="editCaramelName" value="Карамелька" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editCaramelType">Тип животного</label>
+                    <select id="editCaramelType" required>
+                        <option value="dog">Собака</option>
+                        <option value="cat">Кошка</option>
+                        <option value="rabbit" selected>Кролик</option>
+                        <option value="bird">Птица</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editCaramelBreed">Порода</label>
+                    <input type="text" id="editCaramelBreed" value="Карликовый кролик">
+                </div>
+                
+                <div class="form-group">
+                    <label for="editCaramelAge">Возраст (лет)</label>
+                    <input type="number" id="editCaramelAge" value="1" min="0" max="50" step="0.1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="editCaramelWeight">Вес (кг)</label>
+                    <input type="number" id="editCaramelWeight" value="1.5" min="0" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="editCaramelHeight">Длина (см)</label>
+                    <input type="number" id="editCaramelHeight" value="25" min="0">
+                </div>
+                
+                <div class="form-actions">
+                    <label for="modal-edit-caramel-toggle" class="cancel-btn">
+                        Отмена
+                    </label>
+                    <button type="submit" class="submit-btn">Сохранить изменения</button>
+                </div>
             </form>
         </div>
     </div>

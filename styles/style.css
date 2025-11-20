@@ -1301,4 +1301,133 @@ main {
     text-align: center;
     color: var(--caramel-pink);
 }
+/* Стили для кнопок действий в карточке питомца */
+.profile-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.edit-pet-btn, .delete-pet-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.edit-pet-btn {
+    background: var(--green-yellow);
+    color: var(--dark-text);
+}
+
+.edit-pet-btn:hover {
+    background: #d4c87a;
+    transform: scale(1.1);
+}
+
+.delete-pet-btn {
+    background: #ff6b6b;
+    color: white;
+}
+
+.delete-pet-btn:hover {
+    background: #ff5252;
+    transform: scale(1.1);
+}
+
+/* Стили для модального окна удаления */
+.delete-confirmation {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.delete-icon {
+    font-size: 48px;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+}
+
+.delete-warning {
+    color: #777;
+    font-size: 0.9rem;
+    margin: 10px 0 20px;
+}
+
+.delete-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.cancel-btn {
+    padding: 12px 25px;
+    background: var(--light-bg);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: var(--dark-text);
+    display: inline-block;
+}
+
+.cancel-btn:hover {
+    background: #e0e0e0;
+}
+
+.confirm-delete-btn {
+    padding: 12px 25px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.confirm-delete-btn:hover {
+    background: #ff5252;
+}
+
+/* Стили для формы редактирования */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-actions .cancel-btn {
+    flex: 1;
+    text-align: center;
+}
+
+.form-actions .submit-btn {
+    flex: 2;
+}
+
+/* Анимация для скрытия карточки при удалении */
+.profile-card {
+    transition: all 0.3s ease;
+}
+
+.profile-card[style*="display: none"] {
+    opacity: 0;
+    transform: scale(0.8);
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
